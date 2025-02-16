@@ -1,0 +1,37 @@
+\section{Conclusão}
+
+Através dos resultados apresentados nesta seção, foi possível comparar a
+eficiência e a precisão dos métodos numéricos estudados, considerando o
+\textit{tempo de computação}, o \textit{número de iterações} e o \textit{erro
+relativo médio}. A fundamentação teórica para esses métodos pode ser encontrada
+em \cite{bartle1983elementos} e \cite{ruggiero1996calculo}, que abordam os
+princípios matemáticos subjacentes.
+
+Em termos de tempo de computação, o método de Ponto Fixo foi o mais eficiente,
+com um tempo médio de $0.000501$ segundos, seguido de perto pelo método Secante,
+com $0.000496$ segundos. Por outro lado, o método Bisseção apresentou o maior
+tempo médio de execução, com $0.001047$ segundos, embora ainda dentro de limites
+aceitáveis para a maioria das aplicações. Esses tempos são ilustrados no gráfico
+de \textit{Tempo de Computação Médio} mostrado na Figura \ref{fig:grafico-comp}.
+
+Quanto ao número de iterações, o método de Ponto Fixo também apresentou um
+número elevado de iterações ($20$), sendo superado apenas pelo método Bisseção,
+que alcançou $21$ iterações. Já os métodos Secante e Newton-Raphson foram os
+mais rápidos, com uma média de $6$ e $8$ iterações, respectivamente. Esse
+desempenho pode ser observado no gráfico de \textit{Número de Iterações} da
+Figura \ref{fig:grafico-comp}.\cite{rudin1976principles}.
+
+Em relação ao erro relativo, os métodos Newton-Raphson e Secante se destacaram
+pela precisão, com erros relativos muito baixos ($5.747333e-12$ e
+$4.001674e-08$, respectivamente). Em contrapartida, o método de Ponto Fixo
+apresentou um erro relativamente alto de $1.500000e+00$, indicando que, apesar
+de ser eficiente em termos de tempo, pode não ser adequado para problemas que
+exijam alta precisão. O gráfico de \textit{Erro Relativo} na Figura
+\ref{fig:grafico-comp} ilustra claramente essas diferenças.
+
+Portanto, pode-se concluir que os métodos Secante e Newton-Raphson são, em
+geral, os mais eficientes e precisos, especialmente para problemas que exigem
+alta precisão em um número reduzido de iterações. No entanto, a escolha do
+método ideal depende das características do problema em questão, como a precisão
+desejada e os recursos computacionais
+disponíveis.\cite{anton2014calculo}~\cite{dequadros2009fundamentos}.

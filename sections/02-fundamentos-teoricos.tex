@@ -1,0 +1,171 @@
+\section{Fundamentos Teóricos}
+
+Nesta seção, são apresentados os métodos numéricos implementados. Cada método é
+descrito em termos de conceito, funcionamento, convergência e
+vantagens/desvantagens.\cite{ruggiero1996calculo}~\cite{asano2009calculo}
+
+\subsection{\textbf{Método da Bisseção}}
+
+O método da bisseção é um algoritmo de busca de raízes que divide repetidamente
+um intervalo ao meio e seleciona o subintervalo que contém a
+raiz.\cite{bartle1983elementos}~\cite{moreira2011curso}
+
+\subsubsection{Funcionamento}
+
+Dada uma função contínua \( f(x) \) e um intervalo \([a, b]\) onde \( f(a) \cdot
+f(b) < 0 \), o método calcula o ponto médio \( c = \frac{a + b}{2} \). Se \(
+f(c) = 0 \), \( c \) é a raiz. Caso contrário, o intervalo é reduzido para \([a,
+		c]\) ou \([c, b]\), dependendo do sinal de \( f(c) \).
+
+\subsubsection{Convergência}
+
+O método converge linearmente, garantindo uma raiz desde que \( f(x) \) seja
+contínua no intervalo e haja uma mudança de sinal. O erro absoluto é reduzido
+pela metade a cada iteração, e o número de iterações necessárias para atingir
+uma precisão \( \epsilon \) é dado por:
+\[
+	n \geq \frac{\log(b - a) - \log(\epsilon)}{\log(2)}.
+\]
+
+\subsubsection{Vantagens e Desvantagens}
+
+\begin{itemize}
+	\item \textbf{Vantagens}: Simplicidade e garantia de convergência.
+	\item \textbf{Desvantagens}: Convergência lenta comparada a outros métodos.
+\end{itemize}
+
+\subsection{\textbf{Método de Newton-Raphson}}
+
+O método de Newton-Raphson é um algoritmo iterativo que usa a derivada da função
+para aproximar a raiz.\cite{moreira2011curso}~\cite{bartle2010introduction}
+
+\subsubsection{Funcionamento}
+
+Dada uma função \( f(x) \) e sua derivada \( f'(x) \), o método começa com uma
+estimativa inicial \( x_0 \). A cada iteração, a aproximação é atualizada por:
+\[
+	x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+\]
+O processo repete até que \( |x_{n+1} - x_n| \) seja menor que uma tolerância
+pré-definida.
+
+\subsubsection{Convergência}
+
+O método converge quadraticamente, desde que a estimativa inicial seja próxima
+da raiz e \( f'(x) \neq 0 \).
+
+\subsubsection{Vantagens e Desvantagens}
+
+\begin{itemize}
+	\item \textbf{Vantagens}: Convergência rápida.
+	\item \textbf{Desvantagens}: Requer o cálculo da derivada e pode divergir se
+	      a estimativa inicial for inadequada.
+\end{itemize}
+
+\subsection{\textbf{Método da Falsa Posição (Regula Falsi)}}
+
+O método da falsa posição é uma variação do método da bisseção que usa uma
+aproximação linear para estimar a raiz.\cite{bartle1983elementos}
+
+\subsubsection{Funcionamento}
+
+Dada uma função \( f(x) \) e um intervalo \([a, b]\) onde \( f(a) \cdot f(b) < 0
+\), o método calcula a interseção da reta que liga \( (a, f(a)) \) e \( (b,
+f(b)) \) com o eixo \( x \):
+\[
+	c = \frac{a \cdot f(b) - b \cdot f(a)}{f(b) - f(a)}.
+\]
+Se \( f(c) = 0 \), \( c \) é a raiz. Caso contrário, o intervalo é reduzido para
+\([a, c]\) ou \([c, b]\), dependendo do sinal de \( f(c) \).
+
+\subsubsection{Convergência}
+
+Mais rápida que a bisseção, mas ainda linear.
+
+\subsubsection{Vantagens e Desvantagens}
+
+\begin{itemize}
+	\item \textbf{Vantagens}: Mais eficiente que a bisseção em muitos casos.
+	\item \textbf{Desvantagens}: Pode ser lento se a função for muito
+	      não-linear.
+\end{itemize}
+
+\subsection{\textbf{Método do Ponto Fixo}}
+
+O método do ponto fixo transforma o problema de encontrar a raiz de \( f(x) = 0
+\) em encontrar um ponto fixo \( g(x) = x \).\cite{moreira2011curso}
+
+\subsubsection{Funcionamento}
+
+Reescreva \( f(x) = 0 \) como \( x = g(x) \). Escolha uma estimativa inicial \(
+x_0 \) e itere:
+\[
+	x_{n+1} = g(x_n).
+\]
+O processo repete até que \( |x_{n+1} - x_n| \) seja menor que uma tolerância
+pré-definida.
+
+\subsubsection{Convergência}
+
+Depende da escolha de \( g(x) \). A convergência é garantida se \( |g'(x)| < 1
+\) em um intervalo contendo a raiz.
+
+\subsubsection{Vantagens e Desvantagens}
+
+\begin{itemize}
+	\item \textbf{Vantagens}: Simplicidade e flexibilidade na escolha de \( g(x) \).
+	\item \textbf{Desvantagens}: Pode divergir se \( g(x) \) não for adequada.
+\end{itemize}
+
+\subsection{\textbf{Método da Secante}}
+
+O método da secante é uma variação do método de Newton que não requer o cálculo
+da derivada.\cite{dequadros2009fundamentos}
+
+\subsubsection{Funcionamento}
+
+Dada uma função \( f(x) \) e duas estimativas iniciais \( x_0 \) e \( x_1 \), o
+método calcula a próxima aproximação usando a fórmula:
+\[
+	x_{n+1} = x_n - f(x_n) \cdot \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}.
+\]
+O processo repete até que \( |x_{n+1} - x_n| \) seja menor que uma tolerância
+pré-definida.
+
+\subsubsection{Convergência}
+
+Superlinear (ordem \( \approx 1.61\)), mas não tão rápida quanto o método de
+Newton.
+
+\subsubsection{Vantagens e Desvantagens}
+
+\begin{itemize}
+	\item \textbf{Vantagens}: Não precisa do cálculo da derivada.
+	\item \textbf{Desvantagens}: Pode divergir se as estimativas iniciais não forem adequadas.
+\end{itemize}
+
+\subsection{\textbf{Comparação Geral dos Métodos}}
+
+A Tabela \ref{tab:comparacao} resume as características principais dos métodos
+discutidos. \newline
+
+\begin{table}[H]
+	\centering
+	\begin{longtable}{|p{1.97cm}|p{1.16cm}|p{1.3cm}|p{1.16cm}|p{1cm}|}
+		\hline
+		\textbf{} \newline \textbf{Método} & \textbf{Tipo} \newline \textbf{Converg.} & \textbf{Deriv.} \newline \textbf{Necessária?} & \textbf{Garantia} \newline \textbf{Converg.} & \textbf{Veloc.} \newline \textbf{Converg.} \\
+		\hline
+		\endfirsthead
+		\hline
+		\endfoot
+		\hline
+		Bisseção                           & Linear                                   & Não                                           & Sim                                          & Lenta                                      \\
+		Newton-Raphson                     & Quadrática                               & Sim                                           & Não                                          & Rápida                                     \\
+		Falsa Posição                      & Linear                                   & Não                                           & Sim                                          & Moderada                                   \\
+		Ponto Fixo                         & Dep. \( g(x) \)                          & Não                                           & Dep. \( g(x) \)                              & Variável                                   \\
+		Secante                            & Superlinear                              & Não                                           & Não                                          & Moderada                                   \\
+		\hline
+	\end{longtable}
+	\caption{Comparação dos métodos numéricos.}
+	\label{tab:comparacao}
+\end{table}
