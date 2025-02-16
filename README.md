@@ -1,4 +1,11 @@
-# Métodos Numéricos de Zero Real: Teoria, Implementação e Comparação
+# Métodos Numéricos de Zero Real:<br> Teoria, Implementação e Comparação
+
+<p align="center">
+  <img src="./fig/demonstracao-app.png" width="480px"/>
+  <p align="center">
+    <i>Imagem do aplicativo para visualização de métodos numéricos</i>
+  </p>
+</p>
 
 Este repositório contém o artigo *"Métodos Numéricos de Zero Real: Teoria,
 Implementação e Comparação"*, onde comparamos diferentes métodos numéricos para
@@ -88,7 +95,7 @@ alterações em qualquer arquivo `.tex`.
 
 ---
 
-📖 Para mais detalhes sobre a implementação, consulte o artigo (`main.pdf`).
+Para mais detalhes sobre a implementação, consulte o artigo ([`main.pdf`](./main.pdf)).
 
 ## 📜 Licença
 
