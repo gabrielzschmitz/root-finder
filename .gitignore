@@ -1,3 +1,14 @@
 .aux
 ./code/__pycache__
 ./code/.venv
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.pdfxref
+*.run.xml
+*.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR
