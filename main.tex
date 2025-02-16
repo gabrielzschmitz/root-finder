@@ -1,0 +1,32 @@
+\documentclass[10pt,conference,twocolumn]{style}
+\input{config/includes.tex}
+\input{config/config.tex}
+\bibliography{ref.bib}
+
+\begin{document}
+
+\title{Métodos Numéricos de Zero Real:\\ Teoria, Implementação e Comparação}
+\author{
+	\IEEEauthorblockN{Gabriel dos Santos Schmitz\\}
+	\IEEEauthorblockN{Vitor Augusto Salata de Souza\\}
+	\IEEEauthorblockA{RA 2487438 \& 2461200, Engenharia de Computação, \\
+		\faEnvelope\ gabrielzschmitz@protonmail.com \\
+		\faEnvelope\ vitsou@alunos.utfpr.edu.br \\}
+}
+
+\maketitle
+\setlength{\textfloatsep}{0pt}  % Reduce space between figure and text
+\setlength{\intextsep}{0pt}     % Remove space above/below the figure when inline
+\setlength{\floatsep}{0pt}      % Remove space between floats
+\input{sections/01-introducao.tex}
+\input{sections/02-fundamentos-teoricos.tex}
+\input{sections/03-implementacao.tex}
+\input{sections/04-results.tex}
+\input{sections/05-conclusao.tex}
+
+\setlength{\bibitemsep}{10pt}
+\clearpage
+\onecolumn
+\printbibliography
+
+\end{document}
